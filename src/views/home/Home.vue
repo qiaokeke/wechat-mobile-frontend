@@ -49,13 +49,6 @@ export default {
     FlexboxItem,
     Tab,
     TabItem
-  },
-  methods: {
-    showList (item) {
-      var listItem = document.getElementById('listItem')
-      alert(listItem.innerHTML)
-      console.log(listItem.innerHTML)
-    }
   }
 }
 </script>
