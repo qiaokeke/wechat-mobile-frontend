@@ -11,6 +11,9 @@ export default {
   name: 'app',
   components: {
     Layout
+  },
+  data: {
+    title: '软石力科技'
   }
 }
 </script>

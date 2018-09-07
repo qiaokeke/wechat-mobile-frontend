@@ -12,6 +12,11 @@ Vue.use(Router)
 
 export const constantRouterMap = [
   {
+    path: '/',
+    name: 'home',
+    component: Home
+  },
+  {
     path: '/home',
     name: 'home',
     component: Home

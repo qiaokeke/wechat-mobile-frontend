@@ -1,6 +1,9 @@
 <template>
     <div>
-        <flexbox orient="vertical">
+        <li v-for="task in tasks">
+            {{task.tid}}
+        </li>
+        <!-- <flexbox orient="vertical">
             <flexbox-item v-for="n of 20">
                 <grid :clos="2">
                     <grid-item style="width:36%;height:150px">
@@ -28,13 +31,23 @@
                     </grid-item>
                 </grid>
             </flexbox-item>
-        </flexbox>
+        </flexbox> -->
     </div>
 </template>
 
 <script>
+import getPreheatTasks from '@/api/task/task'
 import { Grid, GridItem, Flexbox, FlexboxItem, XProgress, XButton } from 'vux'
 export default {
+  computed: {
+    tasks: () => {
+      getPreheatTasks().then(response => {
+        const data = response.data
+        alert(data)
+        return data
+      })
+    }
+  },
   components: {
     Grid,
     GridItem,
