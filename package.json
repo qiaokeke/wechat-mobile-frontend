@@ -13,6 +13,10 @@
   "dependencies": {
     "axios": "^0.18.0",
     "fastclick": "^1.0.6",
+<<<<<<< HEAD
+=======
+    "js-cookie": "^2.2.0",
+>>>>>>> 83b072bc705c2cc351085f3bde51ca5ce9fa0468
     "vue": "^2.5.2",
     "vue-router": "^3.0.1",
     "vuex": "^2.1.1",
