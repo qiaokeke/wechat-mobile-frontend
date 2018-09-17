@@ -39,6 +39,9 @@ export default {
       homeItems: ['待领取', '预热中']
     }
   },
+  created () {
+    console.log(this.$route.query.code)
+  },
   components: {
     CList,
     FList,

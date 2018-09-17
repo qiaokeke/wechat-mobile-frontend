@@ -4,21 +4,20 @@
             <flexbox-item v-for="task in preheatTasks">
                 <grid :clos="2">
                     <grid-item style="width:36%;height:150px">
-                        <!-- <img style="width:100%;height:100%" src="https://render.bitstrips.com/v2/cpanel/5b7bff30-d7cc-4141-9f91-d77fa135057f-4d9bdedc-ec6a-413d-bb8d-96d4eee1dc22-v1.png?transparent=1&palette=1"> -->
-                        <img style="width:100%;height:100%">
+                        <img style="width:100%;height:100%" v-bind:src="task.tgiftPicUrl">
                     </grid-item>
                     <grid-item style="width:64%;height:150px">
                         <flexbox orient="vertical">
                             <flexbox-item>
-                                <span>押款：{{task.tChargeAmout}}，礼品:{{task.tGift}}</span>
+                                <span>押款：{{task.tchargeAmout}}，礼品:{{task.tgift}}</span>
                             </flexbox-item>
                             <flexbox-item>
-                                <span>奖励：{{task.tReward}}</span>
+                                <span>奖励：{{task.treward}}</span>
                             </flexbox-item>
                             <flexbox-item style="margin-top:20px">
                                 <flexbox>
                                     <flexbox-item>
-                                        <x-progress percent="10"></x-progress>
+                                        <x-progress percent=10></x-progress>
                                     </flexbox-item>
                                     <flexbox-item>
                                         <x-button type="primary" text="立即抢"></x-button>
@@ -38,15 +37,8 @@ import { getPreheatTasks } from '@/api/task/task'
 import { Grid, GridItem, Flexbox, FlexboxItem, XProgress, XButton } from 'vux'
 export default {
   data () {
-    const tasks = () => {
-      getPreheatTasks().then(response => {
-        const data = response.data
-        alert(data)
-        return data
-      })
-    }
     return {
-      preheatTasks: tasks
+      preheatTasks: null
     }
   },
   components: {
@@ -56,6 +48,17 @@ export default {
     FlexboxItem,
     XProgress,
     XButton
+  },
+  created () {
+    this.getList()
+  },
+  methods: {
+    getList () {
+      getPreheatTasks().then(response => {
+        const data = response.data
+        this.preheatTasks = data
+      })
+    }
   }
 
 }
