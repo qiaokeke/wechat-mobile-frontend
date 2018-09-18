@@ -8,13 +8,18 @@ import Home from '@/views/home/Home'
 import Order from '@/views/order/Order'
 import Activity from '@/views/activity/Activity'
 import Mine from '@/views/mine/Mine'
+import Login from '@/views/login/index'
+import Code from '@/views/login/code'
+import Detail from '@/views/detail/Detail'
 Vue.use(Router)
 
 export const constantRouterMap = [
+  { path: '/login', component: Login, hidden: true },
+  { path: '/code', component: Code, hidden: true },
   {
     path: '/',
-    name: 'home',
-    component: Home
+    name: 'login',
+    component: Login
   },
   {
     path: '/home',
@@ -25,6 +30,11 @@ export const constantRouterMap = [
     path: '/order',
     name: 'order',
     component: Order
+  },
+  {
+    path: '/detail',
+    name: 'detail',
+    component: Detail
   },
   {
     path: '/activity',

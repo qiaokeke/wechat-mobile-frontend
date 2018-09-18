@@ -17,10 +17,11 @@
                             <flexbox-item style="margin-top:20px">
                                 <flexbox>
                                     <flexbox-item>
-                                        <x-progress percent=10></x-progress>
+                                        <x-progress :percent="task.tprecent"></x-progress>
+                                        <span>进度：{{task.tprogress}}/{{task.ttotal}}</span>
                                     </flexbox-item>
                                     <flexbox-item>
-                                        <x-button type="primary" text="立即抢"></x-button>
+                                        <x-button type="primary" text="立即抢" @click.native.prevent="handleClick"></x-button>
                                     </flexbox-item>
                                 </flexbox>
                             </flexbox-item>
@@ -58,6 +59,9 @@ export default {
         const data = response.data
         this.preheatTasks = data
       })
+    },
+    handleClick () {
+      this.$router.push({ path: '/detail' })
     }
   }
 
