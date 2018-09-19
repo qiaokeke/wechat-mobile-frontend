@@ -61,7 +61,7 @@ export default {
       })
     },
     handleClick () {
-      this.$router.push({ path: '/detail' })
+      this.$router.push({ path: '/flow' })
     }
   }
 

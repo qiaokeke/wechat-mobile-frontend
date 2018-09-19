@@ -11,6 +11,7 @@ import Mine from '@/views/mine/Mine'
 import Login from '@/views/login/index'
 import Code from '@/views/login/code'
 import Detail from '@/views/detail/Detail'
+import Flow from '@/views/detail/ActiveFlow'
 Vue.use(Router)
 
 export const constantRouterMap = [
@@ -35,6 +36,11 @@ export const constantRouterMap = [
     path: '/detail',
     name: 'detail',
     component: Detail
+  },
+  {
+    path: '/flow',
+    name: 'flow',
+    component: Flow
   },
   {
     path: '/activity',
